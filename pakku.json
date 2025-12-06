@@ -1,0 +1,11 @@
+{
+    "name": "The Gardener Was Replaced",
+    "version": "1.0.1",
+    "overrides": [
+        "config",
+        "defaultconfigs",
+        "kubejs",
+        "saves",
+        "options.txt"
+    ]
+}

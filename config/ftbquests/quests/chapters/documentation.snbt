@@ -1,0 +1,640 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	disable_toast: true
+	filename: "documentation"
+	group: ""
+	hide_quest_details_until_startable: true
+	icon: {
+		Count: 1
+		id: "ftbquests:custom_icon"
+		tag: {
+			Icon: "minecraft:item/knowledge_book"
+		}
+	}
+	id: "0997D97794C7B4C7"
+	images: [
+		{
+			height: 10.24d
+			image: "tgwr:textures/gui/documentation.png"
+			rotation: 0.0d
+			width: 16.22d
+			x: 13.0d
+			y: -2.5d
+		}
+		{
+			height: 10.0d
+			image: "tgwr:textures/gui/flowers.png"
+			rotation: 0.0d
+			width: 10.0d
+			x: -4.5d
+			y: 2.5d
+		}
+		{
+			height: 10.0d
+			image: "tgwr:textures/gui/grounds.png"
+			rotation: 0.0d
+			width: 10.0d
+			x: -4.5d
+			y: -6.5d
+		}
+		{
+			height: 20.5d
+			image: "tgwr:textures/gui/other.png"
+			rotation: 0.0d
+			width: 5.0d
+			x: 2.5d
+			y: -2.0d
+		}
+		{
+			height: 6.5d
+			image: "ftblibrary:icons/color_hsb"
+			rotation: -45.0d
+			width: 6.5d
+			x: -5.5d
+			y: 2.0d
+		}
+	]
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"&lGrass&r is the most basic type of ground. Everything grows on it except for the light blue and magenta flowers."
+				""
+				"It gives no boosts, it has no downsides. Perfectly balanced, as all things should be."
+				""
+				"To change the ground type to it use:"
+				""
+				"&7turtle.&6changeGround&7(consts.&6GROUND_TYPES&7.&6DIRT&7)&r"
+			]
+			disable_toast: true
+			icon: "minecraft:grass_block"
+			id: "0FEB2E777C48046A"
+			shape: "rsquare"
+			size: 4.0d
+			title: "Grass"
+			x: -6.5d
+			y: -8.25d
+		}
+		{
+			dependencies: ["6DFFC25C0DFEDD5E"]
+			description: [
+				"&lWater&r cannot be planted on. It is, however, useful in that it boosts the growth rate of all adjacent flowers by 12.5% per each water block adjacent to the plant."
+				""
+				"This means that if a flower is completely surrounded by water, it will grow 1.5 times as fast as without it. Water is also useful for counteracting the effects of mycelium, which slows down adjacent flowers."
+				""
+				"To change the ground type to it use:"
+				""
+				"&7turtle.&6changeGround&7(consts.&6GROUND_TYPES&7.&6WATER&7)&r"
+			]
+			disable_toast: true
+			icon: "minecraft:water_bucket"
+			id: "595DE9FFA087EFD3"
+			shape: "rsquare"
+			size: 4.0d
+			title: "Water"
+			x: -2.5d
+			y: -8.25d
+		}
+		{
+			dependencies: ["63E2B1514EF8298D"]
+			description: [
+				"&lMycelium&r makes flowers selfish. It slows down all adjacent plants, but it increases the drops of the flower on it twofolds."
+				""
+				"An adjacent flower will be slowed down even if it itself is standing on mycelium, so make sure they are separated by at least 1 block from each other. Some plants can only grow on mycelium (prominently the magenta and light blue flowers)."
+				""
+				"To change the ground type to it use:"
+				""
+				"&7turtle.&6changeGround&7(consts.&6GROUND_TYPES&7.&6MYCELIUM&7)&r"
+			]
+			disable_toast: true
+			icon: "minecraft:mycelium"
+			id: "4E02E742CB073195"
+			shape: "rsquare"
+			size: 4.0d
+			title: "Mycelium"
+			x: -6.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["1F2CD0471A6F7831"]
+			description: [
+				"&lFarmland&r acts similarly to grass, with 2 key exceptions. The first one - it does not allow black flowers to grow on it like weeds; so you can mark out spots where you don't want them using this ground type, and make it so that black flowers only grow where you want them."
+				""
+				"The second key exception is that flowers grow 30% slower on them, so if growth rate is key for your type of automation, this might not be the way to go."
+				""
+				"To change the ground type to it use:"
+				""
+				"&7turtle.&6changeGround&7(consts.&6GROUND_TYPES&7.&6FARMLAND&7)&r"
+			]
+			disable_toast: true
+			icon: "tgwr:still_farmland"
+			id: "6D7DDC31B59991EB"
+			shape: "rsquare"
+			size: 4.0d
+			title: "Farmland"
+			x: -2.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["4A412853862B0C31"]
+			description: [
+				"&lThe Mystical Light Blue Flower&r (if unlocked) will grow instead of the blue flower when planted on mycelium."
+				""
+				"The mycelium drop multiplier will still be applied. Enjoy my leniency &m(and incompetence)&r."
+			]
+			disable_toast: true
+			icon: "botania:light_blue_mystical_flower"
+			id: "35828B5CB17EABDD"
+			shape: "square"
+			size: 1.6d
+			title: "Mystical Light Blue Flower"
+			x: -1.5d
+			y: -0.3d
+		}
+		{
+			dependencies: ["3239D8D7416C4208"]
+			description: [
+				"&lThe Mystical Light Gray Flower&r likes company. By default it only has a 20% chance to grow."
+				""
+				"However, the more unqiue flowers adjacent to it, the more the chance. Per every unique flower the chance increases by 20%, with a maximum of 100% with all 4 adjacent flowers being unique."
+				""
+				"Another light gray flower adjacent also counts as a unique one, if you were wondering."
+				""
+				"To plant this flower, use (requires a gray petal that will be consumed):"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6LIGHT_GRAY_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:light_gray_mystical_flower"
+			id: "3F30E7EF2CFBE53E"
+			shape: "square"
+			size: 1.6d
+			title: "Mystical Light Gray Flower"
+			x: -1.5d
+			y: 2.7d
+		}
+		{
+			dependencies: ["4B00A2A7941EED5C"]
+			description: [
+				"&lThe Mystical Gray Flower&r only takes 3 seconds to grow without any water around it. However, there is a catch."
+				""
+				"It only grows while the turtle is directly above it. Since you will most likely already need to wait for other flowers to grow, you can use that as an opporunity to get gray petals as well."
+				""
+				"To plant this flower, use (requires a black petal that will be consumed):"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6GRAY_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:gray_mystical_flower"
+			id: "2EEB54E4E9F48D96"
+			shape: "square"
+			size: 1.6d
+			title: "Mystical Gray Flower"
+			x: -1.5d
+			y: 4.2d
+		}
+		{
+			dependencies: ["4056522011D612AA"]
+			description: [
+				"&lThe Mystical Brown Flower&r loves being around different types of ground. It only has a 20% chance of growing by default."
+				""
+				"Every adjacent ground with a unique grown type will increase that chance by 20 more percent. Only now writing this do I realise that technically this makes the default chance 40% since there will always be a unique ground around it, whoops."
+				""
+				"To plant this flower, use (requires an orange and a black petal that will be consumed):"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6BROWN_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:brown_mystical_flower"
+			id: "4AC3692A6A658C2A"
+			shape: "square"
+			size: 1.6d
+			title: "Mystical Brown Flower"
+			x: -3.0d
+			y: 5.75d
+		}
+		{
+			dependencies: ["4B7BE3E99853B430"]
+			description: [
+				"&lThe Mystical Orange Flower&r spreads like a virus. Once grown, every adjacent flower (grown or not) has a 50% chance to be turned into a fully grown orange flower itself."
+				""
+				"The strategy here might be similar to red flowers, plant these some distance away from others."
+				""
+				"To plant this flower, use (requires a yellow and a red petal that will be consumed):"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6ORANGE_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:orange_mystical_flower"
+			id: "53807C9E05901EE1"
+			shape: "square"
+			size: 1.6d
+			title: "Mystical Orange Flower"
+			x: -4.5d
+			y: 5.75d
+		}
+		{
+			dependencies: ["22B14084B8A61000"]
+			description: [
+				"&lThe Mystical Purple Flower&r drops 8 petals by default, however that number decreses if you do things that would usually increase the number of petals for other flowers - i.e. gather a green flower before that."
+				""
+				"Multipliers, however, still apply normally. You can sleep well at night."
+				""
+				"To plant this flower, use (requires a pink and a black petal that will be consumed):"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6PURPLE_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:purple_mystical_flower"
+			id: "3B656208E9DC20E1"
+			shape: "square"
+			size: 1.6d
+			title: "Mystical Purple Flower"
+			x: -6.0d
+			y: 5.75d
+		}
+		{
+			dependencies: ["0F042C321985754D"]
+			description: [
+				"&lThe Mystical Pink Flower&r also likes company, however it only like company of itself."
+				""
+				"For every other fully-grown pink flower planted adjacent to it, it will get a +1 drop increases that stacks with multipliers."
+				""
+				"To plant this flower, use (requires a magenta and a blue petal that will be consumed):"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6PINK_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:pink_mystical_flower"
+			id: "330E9D609D3CC21F"
+			shape: "square"
+			size: 1.6d
+			title: "Mystical Pink Flower"
+			x: -7.5d
+			y: 5.75d
+		}
+		{
+			dependencies: ["6C5592FB2165AA3F"]
+			description: [
+				"&lThe Mystical Black Flower&r is similar to a weed in real life. It grows when you least expect it and the most use you will get out of it is if you pull it out as soon as possible."
+				""
+				"Black flowers only start growing after getting a 2x2 expansion upgrade. You will only get black petals from them if you gather them BEFORE they grow, otherwise they will drop nothing."
+				""
+				"Survive, adapt, overcome. If you really need them to not grow in a certain place (or anywhere), unlock the farmland ground type, that will help you deal with these."
+			]
+			disable_toast: true
+			icon: "botania:black_mystical_flower"
+			id: "644BA7763215B526"
+			shape: "square"
+			size: 1.6d
+			title: "Mystical Black Flower"
+			x: -1.5d
+			y: 5.75d
+		}
+		{
+			dependencies: ["63944F94708899D6"]
+			description: [
+				"&lThe Mystical Lime Flower&r does not exist. Instead, if unlocked, you will get a lime petal every time you gather a green flower already having got a 7+ increase in drops from them."
+				""
+				"The amount of lime petals will be equal to the amount of green petals you would get without that increase."
+			]
+			disable_toast: true
+			icon: "botania:lime_mystical_flower"
+			id: "17D0B6B0534E163D"
+			shape: "square"
+			size: 1.6d
+			title: "Mystical Lime Flower"
+			x: -1.5d
+			y: 1.2d
+		}
+		{
+			dependencies: ["7A4D621495E38EB4"]
+			description: [
+				"&lThe Yellow Mystical Flower&r has no special gimmicks, so look at this sick ass stickman I made with text instead:"
+				""
+				"  o/ - hi im bob"
+				" /|"
+				" /\\"
+				""
+				"&lSay hi to Bob!&r"
+				""
+				"To plant this flower, use:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6YELLOW_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:yellow_mystical_flower"
+			id: "18F57762DB905F30"
+			shape: "circle"
+			size: 1.6d
+			title: "Mystical Yellow Flower"
+			x: -5.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["0FFF9CAF12BD3521"]
+			description: [
+				"&lThe Cyan Mystical Flower&r can only grow when adjacent to water. They will blow up into a billion pieces in other case."
+				""
+				"They do not get a speed increase from the water."
+				""
+				"To plant this flower, use:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6CYAN_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:cyan_mystical_flower"
+			id: "29C98A996250ACAA"
+			shape: "circle"
+			size: 1.6d
+			title: "Mystical Cyan Flower"
+			x: -7.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["3E7DE1701AD04B9F"]
+			description: [
+				"&lThe Magenta Mystical Flower&r can only grow on mycelium. They will also blow up into a billion pieces in other case."
+				""
+				"They do not get a drop boost from the mycelium."
+				""
+				"To plant this flower, use:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6MAGENTA_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:magenta_mystical_flower"
+			id: "7E94F51A6C60D830"
+			shape: "circle"
+			size: 1.6d
+			title: "Mystical Magenta Flower"
+			x: -4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["52B44F39DD80611D"]
+			description: [
+				"&lThe Blue Mystical Flower&r can only grow when adjacent to the border of your garden. You know what happens to them if they don't."
+				""
+				"Every time you update your garden's size, make sure to change the place where they grow, because flowers on the right and bottom edges or the garden will no longer be on them. "
+				""
+				"For this goal, the &7turtle.&6getRange()&r method might come in handy (read \"Gathering Data\" for more information)"
+				""
+				"To plant this flower, use (requires a cyan and a magenta petal that will be consumed):"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6BLUE_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:blue_mystical_flower"
+			id: "30951789055D93F2"
+			shape: "diamond"
+			size: 1.6d
+			title: "Mystical Blue Flower"
+			x: -5.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["7A9534CFD0F1F23C"]
+			description: [
+				"&lThe Mystical Green Flower&r can massively reduced your headaches when it comes to the large amounts of petals required for the quests."
+				""
+				"When gathered, they give a temporary 10-second 1+ increase to the amount of petals dropped from gathered flowers. This effect stacks with other multipliers, which can snowball into you getting ginormous quantities of petals."
+				""
+				"To plant this flower, use (requires a yellow and a cyan petal that will be consumed):"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6GREEN_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:green_mystical_flower"
+			id: "31047593D0C18969"
+			shape: "diamond"
+			size: 1.6d
+			title: "Mystical Green Flower"
+			x: -7.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["29B3FF148DEA0BC2"]
+			description: [
+				"&lThe Red Mystical Flower&r blows up other flowers around it when it fully grows. Luckily, it only does one adjacent at random."
+				""
+				"If there are no adjacent flowers, it doesn't blow up anything, catch my drift?"
+				""
+				"To plant this flower, use (requires a yellow and a magenta petal that will be consumed):"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6RED_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:red_mystical_flower"
+			id: "7C70D099357CA5F8"
+			shape: "diamond"
+			size: 1.6d
+			title: "Mystical Red Flower"
+			x: -4.0d
+			y: 0.5d
+		}
+		{
+			description: [
+				"&lThe Mystical White Flower&r is the endgame of all flowers. To calculate it's chance of growing, a following formula is used:"
+				""
+				"&o1/(<standard deviation of differently colored flowers> + 1) * 100%&r"
+				""
+				"If you don't know what standard deviation means, it's basically how the average amount one type of flower growing in your garden differs from the amount of other types of flowers growing in your garden. If you still don't get it, google it."
+				""
+				"The formula does not include flowers that are not present in your garden at all, those that cannot be planted, or white flowers themselves."
+				""
+				"To plant this flower, use (requires a petal of EVERTY COLOR except white which will be consumed):"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6WHITE_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:white_mystical_flower"
+			id: "36E42433406FA65D"
+			shape: "gear"
+			size: 2.0d
+			title: "Mystical White Flower"
+			x: -5.5d
+			y: 1.75d
+		}
+		{
+			description: [
+				"&lAs you could've guessed&r, most of the scripts you are going to be making for this modpack are going to somehow involve the controls of the turtle."
+				""
+				"Let's first go over an important concept in programming - imports. As coders, we oftentimes get lazy and do not want to retype all of the things we've already implemented, that's where modules come into the picture."
+				""
+				"Most often, \"modules\" refers to scripts, which don't do anything by themselves, but contain a bunch of definitions for variables and functions (aka insturctions/methods) that are meant to be used elsewhere in other scripts."
+				""
+				"With this pack, 2 modules are bundled by default - &9\"turtle\"&r and &9\"consts\"&r. You can also create ones yourself by doing the same things you would to create a script, then their names would be the name of the file without the \".lua\" suffix (note: the importing script and the module must be in the same directory, this shouldn't matter if you are storing everything in one place)"
+				""
+				"To then later use the things that a module provides, you can use the &6require&7()&r function, specifying the module name by passing it in. That will then return a value that includes all of the variables and functions within a module, which you can write into a variable similar to this:"
+				""
+				"&7turtle = &6require&7(&b\"turtle\"&7)&r"
+				"&7consts = &6require&7(&b\"consts\"&7)&r"
+				"&7yourmodule = &6require&7(&b\"yourmodule\"&7)&r"
+				"{@pagebreak}"
+				"Now, to actually control the turtle you will need the first builtin module that has been described here - &7turtle&r. The use for the other one (&7consts&r) is covered in other parts of this guidebook."
+				""
+				"&7turtle&r contains declarations for methods directly tied to the actions of the bot. Some notable self-explanatory ones include:"
+				""
+				"&7turtle.&6forward&7()&r"
+				"&7turtle.&6back&7()&r"
+				"&7turtle.&6turnLeft&7()&r"
+				"&7turtle.&6turnRight&7()&r"
+				""
+				"There are also ones for planting and gathering flowers:"
+				""
+				"&7turtle.&6gather&7()&r"
+				"&7turtle.&6plant&7()&r"
+				""
+				"NOTE: last one requires a value, related to the flower you want to plant being passed in, see other parts of this guidebook for how that works."
+				""
+				"Lastly, a couple of functions included in the &7turtle&r module return values relating to information about the world around your turtle. For more info on those, look at the \"Gathering Data\" section."
+			]
+			disable_toast: true
+			icon: {
+				Count: 1
+				id: "computercraft:turtle_normal"
+				tag: {
+					RightUpgrade: "minecraft:diamond_hoe"
+					RightUpgradeNbt: {
+						Tag: {
+							Damage: 0
+						}
+					}
+				}
+			}
+			id: "69D3872FC3078591"
+			shape: "square"
+			size: 4.0d
+			title: "Turtle Controls"
+			x: 2.5d
+			y: -8.25d
+		}
+		{
+			description: [
+				"&lWhile making scripts&r, it can sometimes be useful to gather information about the world surrounding your turtle. For that, there are a couple different instructions you can use."
+				""
+				"To get the current coordinates of the turtle, with the left-most top-most corner being point (0;0), you can use the following method:"
+				""
+				"&7x, y = turtle.&6getCoords&7()&r"
+				""
+				"This will return 2 values, which in this example are written to variables &7x&r and &7y&r (note that technically, in Minecraft's coordinate system, those are actually coordinates x and z, not y; feel free to change the names of the variables if that bugs you)."
+				""
+				"Both of these variables are numbers you can then use for &9if&r statements or &9while&r loops, for example:"
+				""
+				"&9if&7 (x == 0) {&r"
+				"    &7turtle.&6plant&7(consts.&6PLANTS&7.&6GREEN_FLOWER&7)&r"
+				"&7}&r"
+				""
+				"This piece of code will only plant green flowers, when the turtle is on the left-most blocks of your garden."
+				""
+				"Reminder that the more the X-coordinate, the more the turtle is to the right. The more the Y-coordinate, the more the turtle is to the \"bottom\" of the garden."
+				"{@pagebreak}"
+				"Another useful piece of data is where the turtle is facing, as you cannot move cardinally and can only use &7turtle.&6turnLeft&7()&r and &7turtle.&6turnRight&7()&r. For that you can use:"
+				""
+				"&7facing = turtle.&6getFacing&7()&r"
+				""
+				"In this case, we get a string return value and set it to variable &7facing&r. It can be one of either - \"east\", \"west\", \"south\", or \"north\"."
+				""
+				"South being down, north being up, west being left, and east being right from the position of the camera."
+				""
+				"Combine this method with an &9if&r or &9while&r statement to, for example, make a program that returns the turtle back to (0;0) no matter where it is or where it's facing."
+				"{@pagebreak}"
+				"A few methods are related to the blocks located beneath the turtle. 3 of them in fact:"
+				""
+				"&7grown = turtle.&6getGrown&7()&r"
+				""
+				"This method returns a boolean (&btrue&r or &bfalse&r) value based on whether the plant below the turtle has yet grown or not (if there is no plant below the turtle, this will return &bfalse&r). Incredibly useful for making simple gathering scripts."
+				""
+				"&7plant = turtle.&6getPlant&7()&r"
+				"&7ground = turtle.&6getGround&7()&r"
+				""
+				"These methods return the flower and ground respectively in their string forms. So, for example - &9\"botania:mystical_black_flower\"&r."
+				""
+				"The strings do contain modid: prefixes as part of how Minecraft stores them, all of the plants in this modpack come from the \"botania\" mod so they will all have a \"botania:\" prefix. All grounds have a \"minecraft:\" prefix."
+				"{@pagebreak}"
+				"Lastly, if you are too lazy to change the variables related to the size of you garden every time you update it, you can get its maximum coordinate (+1, since they start at 0) by using the following function:"
+				""
+				"&7range = turtle.&6getRange&7()&r"
+				""
+				"This will return a number, corresponding to the following numbers for each garden expansion tier:"
+				""
+				"1x1 - 4"
+				"2x2 - 8"
+				"3x3 - 12"
+				"4x4 - 16"
+				""
+				"This is useful for passing into the &9for&r loop, to go around the entirety of your territory. Kind of like this:"
+				""
+				"&9for&7 x = 0, turtle.&6getRange&7()&9 do&r"
+				"    &7...&r"
+				"&9end&r"
+			]
+			disable_toast: true
+			icon: {
+				Count: 1
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "ftblibrary:icons/info"
+				}
+			}
+			id: "36AC8D30D13D5643"
+			shape: "square"
+			size: 4.0d
+			title: "Gathering Data"
+			x: 2.5d
+			y: -4.0d
+		}
+		{
+			description: [
+				"&lMany parts of this&r guide refer to so called \"adjacent\" blocks, be it adjacent plants or adjacent grounds of certain type."
+				""
+				"To clear up the confusion once and for all, here's a little infographic (shown as a top-down view of a sections of your garden):"
+				""
+				"&c[]&2[]&c[]"
+				"&2[]&9[]&2[]"
+				"&c[]&2[]&c[]"
+				""
+				"Shown in &9blue&r is the hypothetical flower that has some mechanic related to its adjacent blocks. Shown in &2green&r ARE the adjacent blocks. Shown in &cred&r are NOT adjacent blocks."
+				""
+				"Only direct neighbours count, diagonals are technically 2 blocks away, and thus are not adjacent."
+				""
+				"\"Adjacent flowers\" means blocks that are at the same height (global Minecraft y-coordinate) as the flower that has the corresponding mechanic. \"Adjacent grounds\" means blocks that are 1 block lower than the actual flower."
+			]
+			disable_toast: true
+			icon: "minecraft:recovery_compass"
+			id: "767750DFCC21FA6E"
+			shape: "square"
+			size: 4.0d
+			title: "Adjacent Blocks"
+			x: 2.5d
+			y: 0.25d
+		}
+		{
+			description: [
+				"&lPatience is key&r for a lot of things in life, and this modpack is no exception."
+				""
+				"You will often find yourself waiting for flowers to grow or random events to happen, and if you code your scripts in a way that just continously does the same tasks over and over with no break in-between, you may find yourself waiting for a single more loop to complete before achieving the task at hand."
+				""
+				"Instead of that, you can use the very useful &6sleep&7()&r instruction included by the developers of CC: Tweaked to simply not do anything for some amount of seconds that you pass into it. For example:"
+				""
+				"&6sleep&7(5)&r"
+				""
+				"Insert this into your script to wait for 5 seconds, thus allowing flowers to start fully growing again before doing another loop of gathering and re-planting of your garden."
+				""
+				"This instruction can especially be useful for growing gray flowers, which you will get into later in this pack."
+			]
+			disable_toast: true
+			icon: "minecraft:clock"
+			id: "69FCCC56DB40406A"
+			shape: "square"
+			size: 4.0d
+			title: "Wasting Less Time"
+			x: 2.5d
+			y: 4.5d
+		}
+	]
+	title: "Documentation"
+}

@@ -1,0 +1,43 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "6150015F0A78D9E4"
+	group: ""
+	hide_quest_until_deps_complete: true
+	id: "6150015F0A78D9E4"
+	images: [{
+		height: 16.0d
+		image: "tgwr:textures/gui/urwinner.png"
+		rotation: 0.0d
+		width: 16.0d
+		x: 0.0d
+		y: -8.5d
+	}]
+	order_index: 0
+	quest_links: [ ]
+	quests: [{
+		dependencies: ["33E0287C2726DAB1"]
+		description: [
+			"&lGenuinely, from the bottom of my heart, thank you!&r"
+			""
+			"This is the first pack that I've actually completed and it means a lot to me that people are playing what I've created."
+			""
+			"As I've said, I don't know if this spot is even physically reachable by a human, but even if you just cheated this in, still thank you for caring enough to do so ;)"
+			""
+			"Another huge thanks to the JEO team who instigated the creation of this pack, as it was made for their packjam. Y'all are awesome, continue doing what you're doing!"
+			""
+			"Anyway, hope you enjoyed it!"
+			""
+			"Yours truly,"
+			"- G_cat"
+		]
+		icon: "botania:cosmetic_tiny_potato_mask"
+		id: "2C6982C6683C55BC"
+		shape: "heart"
+		size: 2.0d
+		title: "<rainb>Thanks For Playing!"
+		x: 0.0d
+		y: 0.0d
+	}]
+	title: "&c"
+}

@@ -1,0 +1,9 @@
+while true do
+    local event = os.pullEvent()
+    print(event)
+    if event == "turn_right" then turtle.turnRight()
+    elseif event == "turn_left" then turtle.turnLeft()
+    elseif event == "move_forwards" then turtle.forward()
+    elseif event == "move_backwards" then turtle.back()
+    end
+end

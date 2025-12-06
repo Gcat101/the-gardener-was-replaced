@@ -1,0 +1,6 @@
+rednet.open("top")
+
+while true do
+    local _, signal = rednet.receive()
+    commands.exec("receive_signal " .. signal)
+end

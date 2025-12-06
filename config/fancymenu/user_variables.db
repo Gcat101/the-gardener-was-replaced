@@ -1,0 +1,98 @@
+type = user_variables
+
+variable {
+  name = brown_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = orange_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = lime_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = green_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = light_gray_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = purple_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = white_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = black_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = magenta_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = gray_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = blue_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = pink_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = red_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = yellow_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = light_blue_petal_count
+  value = 0
+  reset_on_launch = false
+}
+
+variable {
+  name = cyan_petal_count
+  value = 0
+  reset_on_launch = false
+}
+

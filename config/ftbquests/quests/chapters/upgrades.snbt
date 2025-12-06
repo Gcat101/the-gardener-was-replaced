@@ -1,0 +1,1429 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	disable_toast: true
+	filename: "upgrades"
+	group: ""
+	icon: {
+		Count: 1
+		id: "ftbquests:custom_icon"
+		tag: {
+			Icon: "minecraft:textures/mob_effect/jump_boost.png"
+		}
+	}
+	id: "3DF198A0F80A6B1C"
+	images: [{
+		height: 40.0d
+		image: "tgwr:textures/gui/upgrades.png"
+		rotation: 0.0d
+		width: 32.0d
+		x: 0.0d
+		y: 0.0d
+	}]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"&oHi!&r Welcome to &lThe Gardener Was Replaced&r, a pack which (as you could've guessed) was heavily inspired by &lThe Farmer Was Replaced&r, a game you should go play if you haven't yet (of course, only after playing this pack)."
+				""
+				"&lThis pack&r will take you through the basics of the &oLua programming language&r as you will be controlling the bot &o(nicknamed turtle due to programmer reasons)&r you can see on your screen right now through it."
+				""
+				"&lTo begin&r, first press the checkmark to complete this quest. This will allow you to get upgrades required to progress through the gameplay."
+				""
+				"&lThen, press the &oE key&r. You will notice that your inventory has been replaced with a terminal. This will be your gateway to run code on the farming bot to make it actually do things."
+				"{@pagebreak}"
+				"&lIf you are not familiar with how the terminal works&r, don't worry. All you will need is a couple of basic commands:"
+				""
+				"&lFirstly&r, and most importantly, the &6edit <filename>&r command will allow you to edit a file with the specified filename. Once you run it, the text editing environment should be easy enough to understand. Press &oCTRL&r to save the file and exit the editor."
+				""
+				"&lNext&r, to actually run your script type in the &6filename&r you gave it. The file must have the suffix &o.lua&r, but you don't need to specify it to run. &lIf you created a file without a suffix&r, it will be .lua by default. You can have multiple scripts on your turtle at the same time."
+				""
+				"&lLastly&r, if you want to quickly run some lua code without creating a script, you can use the &oREPL&r by running the &6lua&r command. &lIt is not recommended&r to run &oall&r of your code that way."
+				""
+				"&lThat's not all&r of the existing command. You might also wanna list files with &6ls&r or remove them using &6rm&r, but that's mostly all that you will need. &lFor everything else&r, don't be afraid to search it up on the web!"
+				""
+				"&lThis modpack uses&r a popular mod by the name of &oCC: Tweaked&r to do all of the programming related things, so look up a few tutorials for it if you don't yet feel comfortable using it!"
+				""
+				"&oNow,&r let's actually do something with your little &lrobo-friend&r."
+				"{@pagebreak}"
+			]
+			disable_toast: true
+			icon: {
+				Count: 1
+				id: "computercraft:turtle_normal"
+				tag: {
+					RightUpgrade: "minecraft:diamond_hoe"
+					RightUpgradeNbt: {
+						Tag: {
+							Damage: 0
+						}
+					}
+				}
+			}
+			id: "43D29D4E29B39AF3"
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "And it begins..."
+			tasks: [{
+				id: "0C7B73BF7352C3D0"
+				type: "checkmark"
+			}]
+			title: "Start Here!"
+			x: 1.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["43D29D4E29B39AF3"]
+			description: [
+				"&lThe gameplay loop&r of this pack will consist of you completing various tasks &o(usually related to gathering some flowers)&r in exchange for unlocking new mechanics."
+				""
+				"&lYour first task&r is to simply move the turtle. For that, you will first need to &oimport&r the tools used for controlling it. For that, simply add this line to your script:"
+				""
+				"&7turtle = &6require&7(&b\"turtle\"&7)&r"
+				""
+				"&lYou are now able&r to access various commands in code that are related to controlling the turtle, specifically:"
+				""
+				"&7turtle.&6forward&7()&r"
+				"&7turtle.&6back&7()&r"
+				"&7turtle.&6turnLeft&7()&r"
+				"&7turtle.&6turnRight&7()&r"
+				""
+				"&lAll of which&r do exactly what you think &othey would do.&r Try out some of them to unlock your first plant - the &l&eYellow Mystical Flower&r."
+				"{@pagebreak}"
+				"&lTo plant said flower&r, you will need to import a list of all plants. &oThat&r can be located within the \"&oconsts&r\" package."
+				""
+				"&lLet's import that&r similar to how we imported the instructions for the turtle:"
+				""
+				"&7consts = &6require&7(&b\"consts\"&7)&r"
+				""
+				"&lNow we can access&r what's called an \"&oenum&r\" of all possible by using:"
+				""
+				"&7consts.&6PLANTS&7.&6YELLOW_FLOWER&r"
+				""
+				"&lIf you have never coded before&r, just think of it as a list, with each plant having a name attached to it, all in UPPERCASE replacing spaces with underscores &o(as per programmer tradition)&r. Now the value is not useful by itself, we're only basically telling the computer to think of it."
+				""
+				"&lTo actually do something with it&r, we need to pass it to another turtle instruction as an \"&oargument&r\", telling the turtle to actually place it:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6YELLOW_FLOWER&7)&r"
+				""
+				"&lCongrats!&r You have now officially planted your first flower. It will take a bit to grow, but when it does you can use another command to gather its &opetals&r (the turtle must be right above it):"
+				""
+				"&7turtle.&6gather&7()&r"
+				"{@pagebreak}"
+				"&lTo maximize efficiency&r, you might want to use all of the space proived to you to grow flowers &oin parallel.&r For that, move your turtle around and plant the flowers accordingly using the previously supplied commands."
+				""
+				"&lLua also provides&r a couple options for loops, specifically &9while&r and &9for&r, as well as an &9if&r conditional statement. If you are a programmer you already know what they do, otherwise feel free to research them in order to optimize the space your code takes up."
+				""
+				"&lWhile your turtle&r is moving around, it might be important to gather some data about the world surrounding it, you can do that by calling the following turtle instructions and writing them to \"&ovariables&r\" - boxes of data that you can use later in your code:"
+				""
+				"&7x, y = turtle.&6getCoords&7()&r"
+				"&7facing = turtle.&6getFacing&7()&r"
+				"&7grown = turtle.&6getGrown&7()&r"
+				"&7plant = turtle.&6getPlant&7()&r"
+				""
+				"&lThese&r return the coordinates of the turtle, the way its facing (east, west, north, or south respectfully), whether the plant beneath the turtle has grown yet, and the name of the plant below the turtle respectfully."
+				""
+				"&lNote&r that &6getFacing&r and &6getPlant&r return \"&ostrings&r\" - lines of text; &6getGrown&r returns a \"&oboolean&r\" - true or false value; and &6getCoords&r returns two numbers - &ox&r and &oy&r respectfully."
+				""
+				"&lYou can rename these&r variables however you want and access them by said names."
+				"{@pagebreak}"
+				"&lP.S:&r if you need more info about any of the concepts listed here or later, check out the documentation chapter of this guidebook."
+				""
+				"&lAccessing external resources&r on the internet might be useful as well."
+			]
+			disable_toast: true
+			icon: "botania:yellow_mystical_flower"
+			id: "7A4D621495E38EB4"
+			rewards: [{
+				auto: "invisible"
+				id: "547EF70AD8924032"
+				ignore_reward_blocking: true
+				stage: "can_plant_2"
+				title: "can_plant_2"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "Reaching for the sunshine"
+			tasks: [{
+				icon: {
+					Count: 1
+					id: "computercraft:turtle_normal"
+					tag: {
+						RightUpgrade: "minecraft:diamond_hoe"
+						RightUpgradeNbt: {
+							Tag: {
+								Damage: 0
+							}
+						}
+					}
+				}
+				id: "42DD63F5F8C0EF26"
+				stage: "turtle_moved"
+				title: "Move the turtle!"
+				type: "gamestage"
+			}]
+			title: "Mystical Yellow Flower"
+			x: 1.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["7A4D621495E38EB4"]
+			description: [
+				"&lSometimes&r you just want more, no matter the cost. For flowers, that means more petals per gather, of course!"
+				""
+				"&lAfter unlocking this upgrade&r, you will be able to change the ground underneath the current position of the turtle to mycelium using the following instruction:"
+				""
+				"&7turtle.&6changeGround&7(consts.&6GROUND_TYPES&7.&6MYCELIUM&7)&r"
+				""
+				"&lPlanting flowers&r on mycelium causes them to drop &ltwice as much&r as they would usually, at the expense of all of the flowers, growing \"&oadjacent&r\" (see documentation)."
+				""
+				"&l&oThey&r will get a decrease in growing speed, with up to &o2x times&r slower than the normal rate if all 4 of their adjacent flowers grow on mycelium. &l&oIt does not matter&r if they are also &ogrowing on mycelium&r."
+				""
+				"&lTo change the ground&r back to dirt use the following instruction &o(make sure to gather the flower first, or you &lwill&r&o lose its petals):&r"
+				""
+				"&7turtle.&6changeGround&7(consts.&6GROUND_TYPES&7.&6DIRT&7)&r"
+			]
+			disable_toast: true
+			icon: "minecraft:mycelium"
+			id: "63E2B1514EF8298D"
+			rewards: [{
+				auto: "invisible"
+				id: "376E377809E289AE"
+				ignore_reward_blocking: true
+				stage: "can_ground_2"
+				title: "can_ground_2"
+				type: "gamestage"
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "Join the dark side"
+			tasks: [{
+				count: 48L
+				id: "04D6AF7792C3DE5F"
+				item: "botania:yellow_petal"
+				type: "item"
+			}]
+			title: "Mycelium"
+			x: -2.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["7A4D621495E38EB4"]
+			description: [
+				"&lSometimes&r waiting for a flower to grow can feel like an eternity. &oLuckily,&r there are a couple of ways to solve this problem! &lThe easiest one&r for you to access right now, of course, being &lwater&r."
+				""
+				"&lAfter unlocking this upgrade&r, you will be able to change the ground currently below the turtle by using the following instruction:"
+				""
+				"&7turtle.&6changeGround&7(consts.&6GROUND_TYPES&7.&6WATER&7)&r"
+				""
+				"&lEvery flower&r that grows in a block \"&oadjacent&r\" (see documentation) to a water block will get a boost in growth speed. The more water sources around the flower - &othe better.&r Up to &o50%&r faster with 4 water block adjacent!"
+				""
+				"&lThe only drawback&r - scientists have not yet been able to figure out how to plant things on it :(. To change the ground back to dirt, see the quest for &omycelium&r."
+			]
+			disable_toast: true
+			icon: "minecraft:water_bucket"
+			id: "6DFFC25C0DFEDD5E"
+			rewards: [{
+				auto: "invisible"
+				id: "4D4B176BA3444488"
+				ignore_reward_blocking: true
+				stage: "can_ground_1"
+				title: "can_ground_1"
+				type: "gamestage"
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "Colorless, but not useless"
+			tasks: [{
+				count: 48L
+				id: "2FC3B0154B166DFC"
+				item: { Count: 48, id: "botania:yellow_petal" }
+				type: "item"
+			}]
+			title: "Water"
+			x: 4.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["63E2B1514EF8298D"]
+			description: [
+				"&lThe &dMystical Magenta Flower&r can only grow on mycelium and does not get a drop boost from it. &lGrow it&r using the following instruction:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6MAGENTA_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:magenta_mystical_flower"
+			id: "3E7DE1701AD04B9F"
+			rewards: [{
+				auto: "invisible"
+				id: "5E413BFD2681CB74"
+				ignore_reward_blocking: true
+				stage: "can_plant_9"
+				title: "can_plant_9"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "Sons of the evil"
+			tasks: [{
+				count: 64L
+				id: "38E549DD8AABB3D7"
+				item: { Count: 64, id: "botania:yellow_petal" }
+				type: "item"
+			}]
+			title: "Mystical Magenta Flower"
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6DFFC25C0DFEDD5E"]
+			description: [
+				"&lThe &3Mystical Cyan Flower&r can only grow when next to water and does not get a speed boost from it. &lGrow it&r using the following instruction:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6CYAN_FLOWER&7)&r"
+			]
+			disable_toast: true
+			icon: "botania:cyan_mystical_flower"
+			id: "0FFF9CAF12BD3521"
+			rewards: [{
+				auto: "invisible"
+				id: "0C1D87D18B2C457F"
+				ignore_reward_blocking: true
+				stage: "can_plant_6"
+				title: "can_plant_6"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "Take me to the beach"
+			tasks: [{
+				count: 64L
+				id: "2F49953AAD945278"
+				item: { Count: 64, id: "botania:yellow_petal" }
+				type: "item"
+			}]
+			title: "Mystical Cyan Flower"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"0FFF9CAF12BD3521"
+				"3E7DE1701AD04B9F"
+			]
+			description: [
+				"&lThe &9Mystical Blue Flower&r can only grow when next to the garden border. &lGrow it&r using the following instruction:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6BLUE_FLOWER&7)&r"
+				""
+				"&lThis flower&r requires a &dmagenta&r and a &3cyan&r petal to be planted. Make sure you have those."
+			]
+			disable_toast: true
+			icon: "botania:blue_mystical_flower"
+			id: "52B44F39DD80611D"
+			rewards: [{
+				auto: "invisible"
+				id: "270B2A376E4D8373"
+				ignore_reward_blocking: true
+				stage: "can_plant_7"
+				title: "can_plant_7"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "Skybathing"
+			tasks: [
+				{
+					count: 128L
+					id: "51D390AB6C5AF323"
+					item: {
+						BigCount: 128
+						Count: 128
+						id: "botania:magenta_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 128L
+					id: "3F99AAFFF5E69B6A"
+					item: {
+						BigCount: 128
+						Count: 128
+						id: "botania:cyan_petal"
+					}
+					type: "item"
+				}
+			]
+			title: "Mystical Blue Flower"
+			x: 1.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["3E7DE1701AD04B9F"]
+			description: [
+				"&lThe &cMystical Red Flower&r will destroy a random flower next to it when fully grown, it's advised to keep it some distance &oaway from other flowers.&r &lGrow it&r using the following instruction:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6RED_FLOWER&7)&r"
+				""
+				"&lThis flower&r requires a &eyellow&r and a &dmagenta&r petal to be planted. Make sure you have those."
+			]
+			disable_toast: true
+			icon: "botania:red_mystical_flower"
+			id: "29B3FF148DEA0BC2"
+			rewards: [{
+				auto: "invisible"
+				id: "7510EFC759A3083C"
+				ignore_reward_blocking: true
+				stage: "can_plant_0"
+				title: "can_plant_0"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "Explosive!"
+			tasks: [
+				{
+					count: 128L
+					id: "32DA1D5E9D013511"
+					item: {
+						BigCount: 128
+						Count: 128
+						id: "botania:yellow_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 128L
+					id: "104AD65F25063B78"
+					item: {
+						BigCount: 128
+						Count: 128
+						id: "botania:magenta_petal"
+					}
+					type: "item"
+				}
+			]
+			title: "Mystical Red Flower"
+			x: -2.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0FFF9CAF12BD3521"]
+			description: [
+				"&lThe &aMystical Green Flower&r when gathered gives a temporary 10 second boost to the amount of petals flowers drop when gathered; this effect &lcan&r be stacked and &lmultiplies&r with drop boosts given by mycelium and other factors. &lGrow it&r using the following instruction:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6GREEN_FLOWER&7)&r"
+				""
+				"&lThis flower&r requires a &eyellow&r and a &3cyan&r petal to be planted. Make sure you have those."
+			]
+			disable_toast: true
+			icon: "botania:green_mystical_flower"
+			id: "7A9534CFD0F1F23C"
+			rewards: [{
+				auto: "invisible"
+				id: "31C829FC09A5AE4D"
+				ignore_reward_blocking: true
+				stage: "can_plant_3"
+				title: "can_plant_3"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "Net positive"
+			tasks: [
+				{
+					count: 128L
+					id: "7D3C0731E116C2BE"
+					item: {
+						BigCount: 128
+						Count: 128
+						id: "botania:yellow_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 128L
+					id: "3A7BF6DF9FB6DB91"
+					item: {
+						BigCount: 128
+						Count: 128
+						id: "botania:cyan_petal"
+					}
+					type: "item"
+				}
+			]
+			title: "Mystical Green Flower"
+			x: 4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"29B3FF148DEA0BC2"
+				"7A9534CFD0F1F23C"
+				"52B44F39DD80611D"
+			]
+			description: [
+				"&lHaving all of this space&r is already pretty cool, but you know what's &ocooler?&r &lHaving twice as much!&r"
+				""
+				"&lUnlocking this upgrade&r will immediately expand your garden to 2x2 quarter-chunks (4x4 blocks each), making your the size of your garden be &l1 whole chunk overall!&r"
+				""
+				"&l<bounce>Imagine The Possiblities™!&r"
+				"{@pagebreak}"
+				"&lP.S:&r beware of &lthe &0Mystical Black Flower&r, see documentation in &othe case of emergency.&r"
+			]
+			disable_toast: true
+			icon: {
+				Count: 1
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "ags_modernmarkings:block/marking_number_2"
+				}
+			}
+			id: "6C5592FB2165AA3F"
+			rewards: [{
+				auto: "invisible"
+				id: "12962B1C6F7B845A"
+				tags: ["expand_0"]
+				title: "expand_0"
+				type: "custom"
+			}]
+			shape: "square"
+			size: 2.0d
+			subtitle: "All your space are belong to us"
+			tasks: [
+				{
+					count: 128L
+					id: "2794A24EDC1D2DFB"
+					item: "botania:red_petal"
+					type: "item"
+				}
+				{
+					count: 128L
+					id: "17C08DF936C26D89"
+					item: "botania:green_petal"
+					type: "item"
+				}
+				{
+					count: 128L
+					id: "703626E0039FFF77"
+					item: "botania:blue_petal"
+					type: "item"
+				}
+			]
+			title: "2x2 Expansion"
+			x: 1.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6C5592FB2165AA3F"]
+			description: [
+				"&lThis upgrade&r expands the space to 3x3 quarter-chunks."
+				""
+				"<turb a=2 f=1.5><glitch>WOW!©"
+			]
+			disable_toast: true
+			icon: {
+				Count: 1
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "ags_modernmarkings:block/marking_number_3"
+				}
+			}
+			id: "521023AD5B705695"
+			rewards: [{
+				id: "2F21976D0BDDFCC3"
+				tags: ["expand_1"]
+				title: "expand_1"
+				type: "custom"
+			}]
+			shape: "square"
+			size: 2.0d
+			subtitle: "I said MORE!"
+			tasks: [
+				{
+					count: 2048L
+					id: "49780AEEDF05BEDB"
+					item: {
+						BigCount: 2048
+						Count: 2048
+						id: "botania:orange_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 2048L
+					id: "2EB44D03D48C2D8C"
+					item: {
+						BigCount: 2048
+						Count: 2048
+						id: "botania:pink_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 2048L
+					id: "04A5B1CF9C2CD8C2"
+					item: {
+						BigCount: 2048
+						Count: 2048
+						id: "botania:gray_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 2048L
+					id: "1E5347919F3E46B3"
+					item: {
+						BigCount: 2048
+						Count: 2048
+						id: "botania:light_gray_petal"
+					}
+					type: "item"
+				}
+			]
+			title: "3x3 Expansion"
+			x: -2.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["521023AD5B705695"]
+			description: [
+				"&lTired&r of all of these weeds screwing up your perfect garden? &lTry Farmland™!&r"
+				""
+				"&lFlowers grow slower&r on it by about 30%, however &l&0Mystical Black Flowers&r will not appear on it."
+				""
+				"&lTo change the ground&r below the turtle to farmland, use the following instruction:"
+				""
+				"&7turtle.&6changeGround&7(consts.&6GROUND_TYPES&7.&6FARMLAND&7)&r"
+			]
+			disable_toast: true
+			icon: "tgwr:still_farmland"
+			id: "1F2CD0471A6F7831"
+			rewards: [{
+				auto: "invisible"
+				id: "7A3476C20C7BA4AD"
+				ignore_reward_blocking: true
+				stage: "can_ground_3"
+				title: "can_ground_3"
+				type: "gamestage"
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "They sicken me"
+			tasks: [{
+				count: 2048L
+				id: "618153D07F7C950B"
+				item: {
+					BigCount: 2048
+					Count: 2048
+					id: "botania:black_petal"
+				}
+				type: "item"
+			}]
+			title: "Farmland"
+			x: -5.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["521023AD5B705695"]
+			description: [
+				"&lThis upgrade&r expands the space to 4x4 quarter-chunks, or 4 chunks overall."
+				""
+				"<shake a=2 f=3><rainb>AMAZING!©™®"
+			]
+			disable_toast: true
+			icon: {
+				Count: 1
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "ags_modernmarkings:block/marking_number_4"
+				}
+			}
+			id: "44DC5A77ED0D3699"
+			rewards: [{
+				auto: "no_toast"
+				id: "4B3FFAB7F154CF37"
+				tags: ["expand_2"]
+				title: "expand_2"
+				type: "custom"
+			}]
+			shape: "square"
+			size: 2.0d
+			subtitle: "Pushing the limits"
+			tasks: [
+				{
+					count: 4096L
+					id: "55B303B6C6E9BDAC"
+					item: {
+						BigCount: 4096
+						Count: 4096
+						id: "botania:light_blue_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 4096L
+					id: "3F1A12DA2DA80985"
+					item: {
+						BigCount: 4096
+						Count: 4096
+						id: "botania:brown_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 4096L
+					id: "0F1927CB0C76F0A0"
+					item: {
+						BigCount: 4096
+						Count: 4096
+						id: "botania:purple_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 4096L
+					id: "20256289737E5605"
+					item: {
+						BigCount: 4096
+						Count: 4096
+						id: "botania:lime_petal"
+					}
+					type: "item"
+				}
+			]
+			title: "4x4 Expansion"
+			x: -5.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["44DC5A77ED0D3699"]
+			description: [
+				"&lAfter all of the suffering&r, you arrive here. This upgrade disables turtle animations and makes it move a bit faster, which &ostacks up overall.&r"
+				""
+				"&lGood luck&r out there ;)"
+			]
+			disable_toast: true
+			icon: {
+				Count: 1
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "minecraft:textures/mob_effect/speed.png"
+				}
+			}
+			id: "71458B70B29D052A"
+			rewards: [{
+				auto: "invisible"
+				id: "6ABBCCD578D3274F"
+				ignore_reward_blocking: true
+				stage: "fast_move"
+				title: "fast_move"
+				type: "gamestage"
+			}]
+			shape: "gear"
+			size: 3.0d
+			subtitle: "If you can't do it good do it hard"
+			tasks: [{
+				count: 8192L
+				id: "4DCBA1642E9AC6B5"
+				item: {
+					BigCount: 8192
+					Count: 8192
+					id: "botania:white_petal"
+				}
+				type: "item"
+			}]
+			title: "Fast Movement"
+			x: -8.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6C5592FB2165AA3F"]
+			description: [
+				"&lBy unlocking this upgrade&r, a 2x multiplier will be applied to all flower drops."
+				""
+				"&lThis multiplier&r is applied after every single other drop boost, so it stacks with things like the &lthe &aMystical Green Flower&r &ldrop increases&r."
+			]
+			disable_toast: true
+			icon: "botania:corporea_spark"
+			id: "1693BF2BA6BBE96B"
+			rewards: [{
+				auto: "invisible"
+				id: "68446F4A132C8B5E"
+				tags: ["dropmult_2"]
+				title: "dropmult_2"
+				type: "custom"
+			}]
+			shape: "square"
+			size: 2.0d
+			subtitle: "Double trouble"
+			tasks: [
+				{
+					count: 512L
+					id: "1D89ADC7F16C1027"
+					item: "botania:red_petal"
+					type: "item"
+				}
+				{
+					count: 512L
+					id: "256EE25C07D0F45B"
+					item: "botania:green_petal"
+					type: "item"
+				}
+				{
+					count: 512L
+					id: "341C1FF6F161D735"
+					item: "botania:blue_petal"
+					type: "item"
+				}
+			]
+			title: "2x Drops"
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["1693BF2BA6BBE96B"]
+			description: [
+				"&lBy unlocking this upgrade&r, a 4x multiplier will be applied to all flower drops."
+				""
+				"&lThis multiplier&r replaces the 2x one, but is also applied before all other boosts."
+			]
+			disable_toast: true
+			icon: "botania:corporea_spark_master"
+			id: "07C3650B28EB98E2"
+			rewards: [{
+				auto: "no_toast"
+				id: "0C202E6BD9B7D219"
+				tags: ["dropmult_4"]
+				title: "dropmult_4"
+				type: "custom"
+			}]
+			shape: "square"
+			size: 2.0d
+			subtitle: "Petals hypercubed"
+			tasks: [
+				{
+					count: 1024L
+					id: "3929B354FD497745"
+					item: {
+						BigCount: 512
+						Count: 512
+						id: "botania:orange_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 1024L
+					id: "471A492A36EFF567"
+					item: {
+						BigCount: 1024
+						Count: 1024
+						id: "botania:pink_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 1024L
+					id: "5572F5E0F2DDAAF5"
+					item: {
+						BigCount: 1024
+						Count: 1024
+						id: "botania:gray_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 1024L
+					id: "16CDD87539B60F60"
+					item: {
+						BigCount: 1024
+						Count: 1024
+						id: "botania:light_gray_petal"
+					}
+					type: "item"
+				}
+			]
+			title: "4x Drops"
+			x: 7.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["07C3650B28EB98E2"]
+			description: [
+				"&lBy unlocking this upgrade&r, a 16x multiplier will be applied to all flower drops."
+				""
+				"&lYou are here for a reason&r, aren't you ;)"
+			]
+			disable_toast: true
+			icon: "botania:corporea_spark_creative"
+			id: "258E3CE26301E58A"
+			rewards: [{
+				auto: "no_toast"
+				id: "0F4DDFCBE0A4D8FB"
+				tags: ["dropmult_16"]
+				title: "dropmult_16"
+				type: "custom"
+			}]
+			shape: "square"
+			size: 2.0d
+			subtitle: "This is just getting ridiculous now"
+			tasks: [
+				{
+					count: 2048L
+					id: "1C6C71A8B199576C"
+					item: {
+						BigCount: 2048
+						Count: 2048
+						id: "botania:light_blue_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 2048L
+					id: "51FEF3768B4BB28B"
+					item: {
+						BigCount: 2048
+						Count: 2048
+						id: "botania:lime_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 2048L
+					id: "68A67B897D74F0F1"
+					item: {
+						BigCount: 2048
+						Count: 2048
+						id: "botania:brown_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 2048L
+					id: "1DAF50D351FBE9D3"
+					item: {
+						BigCount: 2048
+						Count: 2048
+						id: "botania:purple_petal"
+					}
+					type: "item"
+				}
+			]
+			title: "16x Drops"
+			x: 10.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0F042C321985754D"]
+			description: [
+				"&lThe &5Mystical Purple Flower&r gives 8 petals by deafault. That amount goes down every petal increase given by &l&aMystical Green Flowers&r with a minimum of 0. &lGrow it&r using the following instruction:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6PURPLE_FLOWER&7)&r"
+				""
+				"&lThis flower&r requires a &dpink&r and a &0black&r petal to be planted. Make sure you have those."
+			]
+			disable_toast: true
+			icon: "botania:purple_mystical_flower"
+			id: "22B14084B8A61000"
+			rewards: [{
+				auto: "invisible"
+				id: "1B85DE99CED26B39"
+				ignore_reward_blocking: true
+				stage: "can_plant_8"
+				title: "can_plant_8"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "Anti-productive"
+			tasks: [
+				{
+					count: 2048L
+					id: "0E9C878E7AA0DD8E"
+					item: {
+						BigCount: 2048
+						Count: 2048
+						id: "botania:pink_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 2048L
+					id: "6B350A4EE17A758D"
+					item: {
+						BigCount: 2048
+						Count: 2048
+						id: "botania:black_petal"
+					}
+					type: "item"
+				}
+			]
+			title: "Mystical Purple Flower"
+			x: 7.0d
+			y: 11.0d
+		}
+		{
+			dependencies: ["6C5592FB2165AA3F"]
+			description: [
+				"&lThe &dMystical Pink Flower&r gives extra drops if other pink flowers is adjacent to it, with &o1 extra petal per adjacent fully grown flower.&r This effect stacks with multipliers. &lGrow it&r using the following instruction:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6PINK_FLOWER&7)&r"
+				""
+				"&lThis flower&r requires &dmagenta&r and a &9blue&r petal to be planted. Make sure you have those."
+			]
+			disable_toast: true
+			icon: "botania:pink_mystical_flower"
+			id: "0F042C321985754D"
+			rewards: [{
+				auto: "invisible"
+				id: "3308F89A1E4ACE9B"
+				ignore_reward_blocking: true
+				stage: "can_plant_10"
+				title: "can_plant_10"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "The most important love is self love"
+			tasks: [
+				{
+					count: 1024L
+					id: "4F7FD22ED42A25CA"
+					item: {
+						BigCount: 1024
+						Count: 1024
+						id: "botania:magenta_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 1024L
+					id: "136A952A80AC9C36"
+					item: {
+						BigCount: 1024
+						Count: 1024
+						id: "botania:blue_petal"
+					}
+					type: "item"
+				}
+			]
+			title: "Mystical Pink Flower"
+			x: 7.0d
+			y: 8.5d
+		}
+		{
+			dependencies: [
+				"4B7BE3E99853B430"
+				"618153D07F7C950B"
+			]
+			description: [
+				"&lThe &6Mystical Brown Flower&r is similar to &lthe &7Mystical Light Gray Flower&r in that it only has a 20% chance to grow, however its chance increases the more unique adjacent ground there is to it, with a maximum of 100% if all adjacent ground is unique. &lGrow it&r using the following instruction:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6BROWN_FLOWER&7)&r"
+				""
+				"&lThis flower&r requires an &6orange&r and a &0black&r petal to be planted. Make sure you have those."
+			]
+			disable_toast: true
+			icon: "botania:brown_mystical_flower"
+			id: "4056522011D612AA"
+			rewards: [{
+				auto: "invisible"
+				id: "021A94C3E14756EF"
+				ignore_reward_blocking: true
+				stage: "can_plant_15"
+				title: "can_plant_15"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "Terraphiliac"
+			tasks: [
+				{
+					count: 2048L
+					id: "0CE487E0820EF50B"
+					item: {
+						BigCount: 2048
+						Count: 2048
+						id: "botania:orange_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 2048L
+					id: "3081B9665C137BDF"
+					item: {
+						BigCount: 2048
+						Count: 2048
+						id: "botania:black_petal"
+					}
+					type: "item"
+				}
+			]
+			title: "Mystical Brown Flower"
+			x: -5.0d
+			y: 11.0d
+		}
+		{
+			dependencies: ["521023AD5B705695"]
+			description: [
+				"&lThe &bMystical Light Blue Flower&r cannot be grown naturally."
+				""
+				"&lBy unlocking this quest&r, you make it so that when a &9blue&r flower is planted on mycelium, this one will come out of it instead."
+			]
+			disable_toast: true
+			icon: "botania:light_blue_mystical_flower"
+			id: "4A412853862B0C31"
+			rewards: [{
+				auto: "invisible"
+				id: "4768B7E8A3D9C2A5"
+				ignore_reward_blocking: true
+				stage: "can_plant_5"
+				title: "can_plant_5"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "Happy little accident"
+			tasks: [{
+				count: 2048L
+				id: "2919130DF741EE57"
+				item: "botania:blue_petal"
+				type: "item"
+			}]
+			title: "Mystical Light Blue Flower"
+			x: -8.0d
+			y: 10.0d
+		}
+		{
+			dependencies: [
+				"1693BF2BA6BBE96B"
+				"49780AEEDF05BEDB"
+				"2EB44D03D48C2D8C"
+				"04A5B1CF9C2CD8C2"
+				"1E5347919F3E46B3"
+			]
+			description: [
+				"<shake a=2 f=3>I LIED! THERE IS NO FLOWER!"
+				""
+				"&lBy unlocking this quest&r, you make it so that when you gather a &agreen&r flower with a 7+ increase already gotten from them, you get a byproduct in the form of a &l&alime petal&r."
+			]
+			disable_toast: true
+			icon: "botania:lime_mystical_flower"
+			id: "63944F94708899D6"
+			rewards: [{
+				auto: "invisible"
+				id: "0E98E4E48DC977FF"
+				ignore_reward_blocking: true
+				stage: "can_plant_4"
+				title: "can_plant_4"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "Byproduct of having way too much"
+			tasks: [{
+				count: 2048L
+				id: "115D855803A9F2E1"
+				item: "botania:green_petal"
+				type: "item"
+			}]
+			title: "Mystical Lime Flower"
+			x: 10.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["6C5592FB2165AA3F"]
+			description: [
+				"&lThe &6Mystical Orange Flower&r has a chance to infect other flowers adjacent to it when fully grows, turning them into copies of itself. &lThis can&r either be a &odesirable&r, or an &oundesirable&r effect based on your goals. &lGrow it&r using the following instruction:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6ORANGE_FLOWER&7)&r"
+				""
+				"&lThis flower&r requires a &eyellow&r and a &cred&r petal to be planted. Make sure you have those."
+			]
+			disable_toast: true
+			icon: "botania:orange_mystical_flower"
+			id: "4B7BE3E99853B430"
+			rewards: [{
+				auto: "invisible"
+				id: "0AE3818C232A8E5B"
+				ignore_reward_blocking: true
+				stage: "can_plant_1"
+				title: "can_plant_1"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "Happiness is contagious"
+			tasks: [
+				{
+					count: 1024L
+					id: "54F19ECFE563689B"
+					item: {
+						BigCount: 2048
+						Count: 2048
+						id: "botania:yellow_petal"
+					}
+					type: "item"
+				}
+				{
+					count: 1024L
+					id: "1FAD8C50EDBA98B1"
+					item: {
+						BigCount: 1024
+						Count: 1024
+						id: "botania:red_petal"
+					}
+					type: "item"
+				}
+			]
+			title: "Mystical Orange Flower"
+			x: -5.0d
+			y: 8.5d
+		}
+		{
+			dependencies: [
+				"6C5592FB2165AA3F"
+				"791333D583D804B7"
+			]
+			description: [
+				"&lThe &7Mystical Light Gray Flower&r only has a 20% chance to grow, however it can be increased by planting other flowers next to it. For every adjacent flower of unique color, the chance of this flower growing goes up by 20%, with a maximum of 100% if all of the adjacent flowers are unique. &lGrow it&r using the following instruction:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6LIGHT_GRAY_FLOWER&7)&r"
+				""
+				"&lThis flower&r is a &8gray&r flower replant, meaning it needs its petal to be planted. Make sure you have it."
+			]
+			disable_toast: true
+			icon: "botania:light_gray_mystical_flower"
+			id: "3239D8D7416C4208"
+			rewards: [{
+				auto: "invisible"
+				id: "5C2DB49BC2D47B54"
+				ignore_reward_blocking: true
+				stage: "can_plant_12"
+				title: "can_plant_12"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "...and more is better!"
+			tasks: [
+				{
+					count: 128L
+					id: "62D04B65FDBFDADA"
+					item: "botania:gray_petal"
+					type: "item"
+				}
+				{
+					count: 128L
+					id: "7F404B2197F2361D"
+					item: "botania:black_petal"
+					type: "item"
+				}
+			]
+			title: "Mystical Light Gray Flower"
+			x: 4.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["6C5592FB2165AA3F"]
+			description: [
+				"&lThe &8Mystical Gray Flower&r only needs 3 seconds to grow without any additional help, however it can only do so while the turtle is hovering directly above it. This flower can be a good resting spot while you wait for all of the other flowers to grow. &lGrow it&r using the following instruction:"
+				""
+				"&7turtle.&6plant&7(consts.&6PLANTS&7.&6GRAY_FLOWER&7)&r"
+				""
+				"&lThis flower&r is a &0black&r flower replant, meaning it needs its petal to be planted. Make sure you have it."
+			]
+			disable_toast: true
+			icon: "botania:gray_mystical_flower"
+			id: "4B00A2A7941EED5C"
+			rewards: [{
+				auto: "invisible"
+				id: "786A8C76C7071B3C"
+				ignore_reward_blocking: true
+				stage: "can_plant_11"
+				title: "can_plant_11"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "Patience is key..."
+			tasks: [{
+				count: 128L
+				id: "791333D583D804B7"
+				item: "botania:black_petal"
+				type: "item"
+			}]
+			title: "Mystical Gray Flower"
+			x: -2.0d
+			y: 10.0d
+		}
+		{
+			dependencies: [
+				"4B00A2A7941EED5C"
+				"3239D8D7416C4208"
+				"0F042C321985754D"
+				"4A412853862B0C31"
+				"63944F94708899D6"
+				"0F042C321985754D"
+				"4056522011D612AA"
+			]
+			description: [
+				"&lThe Mystical White Flower&r is the last flower you will get. The chance of it growing is based on how &o\"balanced\"&r your garden is, meaning the more the amount of different colored flowers differs from the amounts of other colored flowers, the &oless likely it is to grow.&r"
+				""
+				"&lFor you math heads&r, the growth chance follows the formula of:"
+				""
+				"&o1/(<standard deviation of differently colored flowers> + 1) * 100%&r"
+				""
+				"&lP.S:&r the formula does not include flowers that cannot be planted, are not present in the garden at all, or the white flowers themselves"
+				""
+				"&lOh&r, did I mention that this flower requires &oone of every petal to be planted?&r"
+				""
+				"<glitch f=3 j=0.02 b=0.01 s=0.1><rainb>Good luck! ;)"
+			]
+			disable_toast: true
+			hide_dependency_lines: true
+			icon: "botania:white_mystical_flower"
+			id: "6938FC65CE2A4F30"
+			rewards: [{
+				auto: "invisible"
+				id: "3676372A6EC27FCD"
+				ignore_reward_blocking: true
+				stage: "can_plant_13"
+				title: "can_plant_13"
+				type: "gamestage"
+			}]
+			shape: "diamond"
+			size: 2.5d
+			subtitle: "Everything everywhere all at once"
+			tasks: [
+				{
+					count: 8192L
+					id: "458FFF93B602D663"
+					item: "botania:red_petal"
+					type: "item"
+				}
+				{
+					count: 8192L
+					id: "270C8C1BE14518A0"
+					item: "botania:orange_petal"
+					type: "item"
+				}
+				{
+					count: 8192L
+					id: "15BE30DD82736BD7"
+					item: "botania:yellow_petal"
+					type: "item"
+				}
+				{
+					count: 8192L
+					id: "21EB4444E98666E3"
+					item: "botania:green_petal"
+					type: "item"
+				}
+				{
+					count: 8192L
+					id: "0BADA152559FC618"
+					item: "botania:lime_petal"
+					type: "item"
+				}
+				{
+					count: 8192L
+					id: "3A472D5D8CFC5B7B"
+					item: "botania:light_blue_petal"
+					type: "item"
+				}
+				{
+					count: 8192L
+					id: "75A6995531D51254"
+					item: "botania:cyan_petal"
+					type: "item"
+				}
+				{
+					count: 8192L
+					id: "39FD48B9D4E21DFD"
+					item: "botania:blue_petal"
+					type: "item"
+				}
+				{
+					count: 8192L
+					id: "6AD3EE2470B2CE1F"
+					item: "botania:purple_petal"
+					type: "item"
+				}
+				{
+					count: 8192L
+					id: "0ED43EE64874DBD1"
+					item: "botania:magenta_petal"
+					type: "item"
+				}
+				{
+					count: 8192L
+					id: "2924D977E2233029"
+					item: "botania:pink_petal"
+					type: "item"
+				}
+				{
+					count: 8192L
+					id: "7525FB09C9D4DC73"
+					item: "botania:gray_petal"
+					type: "item"
+				}
+				{
+					count: 8192L
+					id: "0D589CCD250CA028"
+					item: "botania:light_gray_petal"
+					type: "item"
+				}
+				{
+					count: 8192L
+					id: "6D63F6083509588B"
+					item: "botania:black_petal"
+					type: "item"
+				}
+				{
+					count: 8192L
+					id: "1CE056E314F3AD86"
+					item: "botania:brown_petal"
+					type: "item"
+				}
+			]
+			title: "Mystical White Flower"
+			x: 1.0d
+			y: 11.0d
+		}
+		{
+			dependencies: ["6938FC65CE2A4F30"]
+			description: [
+				"&lThis is an optional goal&r. If you want to do something more doable go for the &ofast movement upgrade&r."
+				""
+				"&lI do not know if this is humanly possible&r. I playtested none of this ;)"
+				"{@pagebreak}"
+				"&lP.S:&r check quest chapters after completing this."
+			]
+			disable_toast: true
+			icon: {
+				Count: 1
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "botania:item/cosmetic_questgiver_mark"
+				}
+			}
+			id: "33E0287C2726DAB1"
+			shape: "heart"
+			size: 4.0d
+			subtitle: "Your final challenge"
+			tasks: [{
+				count: 2147483647L
+				id: "56E7D6C826DB2A49"
+				item: "botania:white_petal"
+				type: "item"
+			}]
+			title: "<wiggle>???"
+			x: 1.0d
+			y: 14.25d
+		}
+	]
+	title: "Upgrades"
+}
